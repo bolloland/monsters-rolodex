@@ -16,21 +16,6 @@ class App extends Component {
   render() {
   return (
     <div className="App">
-      <header className="App-header"> 
-      <p>DONDE ESTA MI {this.state.name.first} {this.state.name.second}!, I work at {this.state.company}</p>
-      <button onClick={()=>{
-        this.setState(
-          ()=> {
-            return{
-              name: {first: "bobby", second: "peru"}
-            }
-          }, 
-          ()=> {
-            console.log(this.state)
-          })
-        
-      }}>Change Name</button>
-      </header>
      
     </div>
   );
