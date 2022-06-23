@@ -24,6 +24,12 @@ class App extends Component {
         () => {return ({monsters: users})}
           )})
     }
+
+    onSearchChange = (e) => {
+      const searchfield = e.target.value.toLowerCase()
+        this.setState(() => {
+          return {searchfield}
+        })}
       
 //what to show
   render() {
@@ -33,12 +39,7 @@ class App extends Component {
   return (
     <div className="App">
       <input className="searchbox" type="search" placeholder="search monsters..."
-      onChange={(e) => {
-        const searchfield = e.target.value.toLowerCase()
-          this.setState(() => {
-            return {searchfield}
-          })
-        }}>
+        onChange={ this.onSearchChange }>
         
       </input>
 
