@@ -8,14 +8,28 @@ class App extends Component {
     super();
 
     this.state = {
-      monsters: [
-      {id: 1, name: "Linda"}, 
-      {id: 2, name: "Jack"},
-      {id: 3, name: "Bobby"},
-      {id: 4, name: "Ryan"}
-      ]
+      monsters: []
     }
   }
+
+  //access API (lifecycle methods):
+  componentDidMount() {
+    fetch("https://jsonplaceholder.typicode.com/users")
+    .then(resp => resp.json())
+    //pull json data from API, and that data will fill the monsters array
+    .then((users) => {
+      this.setState(
+        () => {
+          return ({monsters: users})
+              }, 
+        () => {
+          console.log(this.state)
+              }
+          )
+        })
+    }
+      
+  
 
   render() {
   return (
@@ -23,7 +37,7 @@ class App extends Component {
      {this.state.monsters.map((monst) => {
           return (
             <div key={monst.id}>
-              <h1>{monst.name}</h1>
+              <h1>{monst.name} from {monst.address.city}</h1>
             </div>)
         })}
     </div>
