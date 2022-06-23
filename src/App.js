@@ -1,7 +1,7 @@
-
 import './App.css';
 import { Component } from 'react';
 import MonsterComponent from './components/MonsterContainer';
+import SearchField from './components/SearchField';
 
 
 class App extends Component {
@@ -43,12 +43,8 @@ class App extends Component {
 
   return (
     <div className="App">
-      <input 
-        className="searchbox" 
-        type="search" 
-        placeholder="search monsters..."
-        onChange={ onSearchChange } />
-
+     
+        <SearchField onSearchChange={onSearchChange} placeholder="search monsters..." classname="searchbox" />
         <MonsterComponent monsters={filterMonsters} />
 
      {/* {filterMonsters.map((monst) => {
