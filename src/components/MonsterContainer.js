@@ -1,14 +1,13 @@
 import { Component } from "react";
-// import { filterMonsters } from "../App.js" 
 
 class MonsterComponent extends Component {
 
     render() {
-        console.log(this.props)
+        const { monsters } = this.props
+        
         return (
         <div>
-        I'm the Monster Component
-      
+          {monsters.map(monster => <h1>{monster.name}</h1>)}
         </div>
         )
     }
