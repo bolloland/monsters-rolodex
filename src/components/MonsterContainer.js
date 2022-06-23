@@ -7,7 +7,7 @@ class MonsterComponent extends Component {
         
         return (
         <div>
-          {monsters.map(monster => <h1>{monster.name}</h1>)}
+          {monsters.map(monster => <h1 key={monster.id}>{monster.name}</h1>)}
         </div>
         )
     }
