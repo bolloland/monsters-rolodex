@@ -1,7 +1,7 @@
 import './App.css';
 import { Component } from 'react';
-import MonsterComponent from './components/MonsterContainer';
-import SearchField from './components/SearchField';
+import MonsterContainer from './components/monsterlist/MonsterContainer';
+import SearchBox from './components/searchbar/SearchBox';
 
 
 class App extends Component {
@@ -44,8 +44,8 @@ class App extends Component {
   return (
     <div className="App">
      
-        <SearchField onSearchChange={onSearchChange} placeholder="search monsters..." classname="searchbox" />
-        <MonsterComponent monsters={filterMonsters} />
+        <SearchBox onSearchChange={onSearchChange} placeholder="search monsters..." className="search-box" />
+        <MonsterContainer monsters={filterMonsters} />
 
      {/* {filterMonsters.map((monst) => {
           return (
